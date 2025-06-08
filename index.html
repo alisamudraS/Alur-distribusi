@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alur Proses Distribusi Barang</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body, html {
+      background-color: #ffffff;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #1A1A1A;
+      padding: 20px;
+    }
+    #container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0F4C75;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    #desc {
+      text-align: center;
+      color: #444;
+      margin-bottom: 24px;
+      font-size: 15px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      min-height: 28px;
+    }
+    #flowchart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .box {
+      width: 100%;
+      border: 2px solid #000;
+      background: #fff;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      text-align: left;
+    }
+    .icon-row {
+      font-size: 22px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+    }
+    .step-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 2px;
+      display: inline;
+      color: #0F4C75;
+    }
+    .step-desc {
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+      color: #444;
+      padding-left: 32px;
+    }
+    .arrow-vert {
+      font-size: 24px;
+      margin-bottom: 10px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      text-align: center;
+      width: 100%;
+    }
+    @media (max-width: 600px) {
+      body, html {
+        padding: 6px;
+      }
+      #container {
+        max-width: 100%;
+        padding: 0 2vw;
+      }
+      #title {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      #desc {
+        font-size: 12px;
+        margin-bottom: 16px;
+      }
+      .box {
+        padding: 7px 7px;
+      }
+      .icon-row {
+        font-size: 16px;
+        gap: 6px;
+      }
+      .step-title {
+        font-size: 13px;
+      }
+      .step-desc {
+        font-size: 11px;
+        padding-left: 22px;
+      }
+      .arrow-vert {
+        font-size: 18px;
+        margin-bottom: 7px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <!-- Judul utama -->
+    <div id="title">Alur Proses Distribusi Barang</div>
+    <!-- Penjelasan judul -->
+    <div id="desc">Diagram berikut menjelaskan langkah demi langkah proses distribusi mulai dari input data hingga penyimpanan ke database.</div>
+
+    <!-- Flowchart vertikal -->
+    <div id="flowchart">
+      <!-- Step 1 -->
+      <div class="box" id="step1">
+        <div class="icon-row">🖱️ <span class="step-title">Klik tombol Distribusi</span></div>
+        <div class="step-desc">Pengguna memulai proses distribusi dengan menekan tombol <b>Distribusi</b> di aplikasi.</div>
+      </div>
+      <div class="arrow-vert" id="arrow1">⬇️</div>
+      <!-- Step 2 -->
+      <div class="box" id="step2">
+        <div class="icon-row">📅 <span class="step-title">Pilih tanggal pemasukan</span></div>
+        <div class="step-desc">Tanggal pemasukan dipilih sesuai waktu distribusi yang akan dicatat.</div>
+      </div>
+      <div class="arrow-vert" id="arrow2">⬇️</div>
+      <!-- Step 3 -->
+      <div class="box" id="step3">
+        <div class="icon-row">📏🌤️⛽ <span class="step-title">Input detail distribusi</span></div>
+        <div class="step-desc">Pengguna memasukkan jarak antar, cuaca hari ini, dan jenis bensin yang digunakan untuk pengiriman.</div>
+      </div>
+      <div class="arrow-vert" id="arrow3">⬇️</div>
+      <!-- Step 4 -->
+      <div class="box" id="step4">
+        <div class="icon-row">🍎➕ <span class="step-title">Tambah buah & berat</span></div>
+        <div class="step-desc">Klik tombol <b>Tambah Buah</b> untuk memilih jenis buah serta memasukkan berat masing-masing buah.</div>
+      </div>
+      <div class="arrow-vert" id="arrow4">⬇️</div>
+      <!-- Step 5 -->
+      <div class="box" id="step5">
+        <div class="icon-row">🔁 <span class="step-title">Tambah buah lain?</span></div>
+        <div class="step-desc">Jika ada buah lain, proses input <b>Tambah buah & berat</b> diulangi. Jika tidak, lanjut ke penyimpanan data pemasukan.</div>
+      </div>
+      <div class="arrow-vert" id="arrow5">⬇️</div>
+      <!-- Step 6 -->
+      <div class="box" id="step6">
+        <div class="icon-row">💾 <span class="step-title">Simpan pemasukan</span></div>
+        <div class="step-desc">Klik tombol <b>Simpan Pemasukan</b> untuk menyimpan data yang telah diinput.</div>
+      </div>
+      <div class="arrow-vert" id="arrow6">⬇️</div>
+      <!-- Step 7 -->
+      <div class="box" id="step7">
+        <div class="icon-row">🌐 <span class="step-title">Kirim ke API AI</span></div>
+        <div class="step-desc">Data pemasukan yang telah tersimpan dikirimkan ke API untuk diproses oleh sistem AI.</div>
+      </div>
+      <div class="arrow-vert" id="arrow7">⬇️</div>
+      <!-- Step 8 -->
+      <div class="box" id="step8">
+        <div class="icon-row">🤖 <span class="step-title">Terima hasil perhitungan AI</span></div>
+        <div class="step-desc">Aplikasi menerima hasil kalkulasi dari AI dan menampilkan hasilnya.</div>
+      </div>
+      <div class="arrow-vert" id="arrow8">⬇️</div>
+      <!-- Step 9 -->
+      <div class="box" id="step9">
+        <div class="icon-row">🗄️ <span class="step-title">Simpan ke database</span></div>
+        <div class="step-desc">Data pemasukan beserta hasil perhitungan AI disimpan ke database untuk keperluan pencatatan dan pelaporan.</div>
+      </div>
+      <div class="arrow-vert" id="arrow9">⬇️</div>
+      <!-- Step 10 -->
+      <div class="box" id="step10">
+        <div class="icon-row">📋 <span class="step-title">Arahkan ke daftar pemasukan</span></div>
+        <div class="step-desc">Setelah proses selesai, pengguna diarahkan ke halaman <b>Daftar Pemasukan</b> untuk melihat data terbaru.</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const title = document.getElementById('title');
+      const desc = document.getElementById('desc');
+      const sequence = [
+        title,
+        desc,
+        document.getElementById('step1'),
+        document.getElementById('arrow1'),
+        document.getElementById('step2'),
+        document.getElementById('arrow2'),
+        document.getElementById('step3'),
+        document.getElementById('arrow3'),
+        document.getElementById('step4'),
+        document.getElementById('arrow4'),
+        document.getElementById('step5'),
+        document.getElementById('arrow5'),
+        document.getElementById('step6'),
+        document.getElementById('arrow6'),
+        document.getElementById('step7'),
+        document.getElementById('arrow7'),
+        document.getElementById('step8'),
+        document.getElementById('arrow8'),
+        document.getElementById('step9'),
+        document.getElementById('arrow9'),
+        document.getElementById('step10')
+      ];
+      // Tampilkan judul dan deskripsi
+      setTimeout(() => { title.style.opacity = 1; }, 100);
+      setTimeout(() => { desc.style.opacity = 1; }, 800);
+      setTimeout(() => { title.style.opacity = 0; }, 3200);
+      setTimeout(() => { desc.style.opacity = 0; }, 4200);
+      // Munculkan seluruh langkah flowchart dengan jeda rapi setelah judul/deskripsi
+      let delay = 4400;
+      sequence.slice(2).forEach((el) => {
+        setTimeout(() => {
+          el.style.opacity = 1;
+        }, delay);
+        delay += 1200;
+      });
+    });
+  </script>
+</body>
+</html>
